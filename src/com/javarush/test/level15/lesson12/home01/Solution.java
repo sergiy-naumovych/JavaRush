@@ -18,24 +18,36 @@ import java.util.ArrayList;
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        ArrayList<String> list = new ArrayList<String>();
-        while (true)
-        {
-            String line = reader.readLine();
-            if(line.equals("exit")) break;
-            list.add(line);
+        ArrayList<String> list = new ArrayList<>();
+        String input;
+        while(true){
+            input = reader.readLine();
+            if(input.equals("exit")){
+                break;
+            }
 
-        }
-        reader.close();
-
-        for (String item : list)
-        {
-            if(item.contains(".")) print(Double.parseDouble(item));
-            else if (Integer.parseInt(item) > 0 && Integer.parseInt(item) < 128) print(Short.parseShort(item));
-            else if (Integer.parseInt(item) > 127) print(Integer.parseInt(item));
-            else print(item);
+            list.add(input);
         }
 
+
+        for(String val : list){
+            if(val.contains(".")){
+                print(Double.valueOf(val));
+            } else {
+                try{
+                    Integer in = Integer.valueOf(val);
+                    if(in > 0 && in < 128){
+                        print(Short.valueOf(val));
+                    } else if(in >= 128){
+                        print(in);
+                    } else {
+                        print(val);
+                    }
+                } catch (NumberFormatException e){
+                    print(val);
+                }
+            }
+        }
     }
 
     public static void print(Double value) {
