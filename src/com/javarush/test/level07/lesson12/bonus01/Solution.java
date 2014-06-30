@@ -13,29 +13,40 @@ Cat name is Murka age is 8, weight is 7, tail = 20
 
 public class Solution
 {
-    public final static ArrayList<Cat> CATS = new ArrayList<Cat>();
+    public final static ArrayList<Cat> CATS = new ArrayList<>();
 
     public static void main(String[] args) throws IOException
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name;
+        int age;
+        int weight;
+        int tail;
 
         while (true)
         {
-            String name = reader.readLine();
+            try {
+                name = reader.readLine();
+                if (name.isEmpty()) break;
+                age = Integer.valueOf(reader.readLine());
+                weight = Integer.valueOf(reader.readLine());
+                tail = Integer.valueOf(reader.readLine());
+            } catch (IOException e){
+                break;
+            }
 
-            if (name.isEmpty()) break;
 
-           // Cat cat = new Cat(name);
-           // CATS.add(cat);
+
+            Cat cat = new Cat(name, age, weight, tail);
+            CATS.add(cat);
         }
 
         printList();
     }
 
     public static void printList() {
-        for (int i = 0; i < CATS.size(); i++)
-        {
-            System.out.println(CATS.get(i));
+        for (Cat CAT : CATS) {
+            System.out.println(CAT);
         }
     }
 
