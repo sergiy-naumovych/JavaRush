@@ -12,9 +12,8 @@ StringVar с типом String
 2. В методе main вывести их значения в заданном порядке.
 */
 
-import java.io.IOException;
-
 public class Solution {
+
     public static int intVar;
     public static double doubleVar;
     public static Double DoubleVar;
@@ -22,17 +21,7 @@ public class Solution {
     public static Object ObjectVar;
     public static Exception ExceptionVar;
     public static String StringVar;
-/*
-    static {
-        intVar = 10;
-        doubleVar = 10.0;
-        DoubleVar = new Double(10);
-        booleanVar = true;
-        ObjectVar = new Object();
-        ExceptionVar = new IOException("ddd");
-        StringVar = new String("fff");
-    }
-*/
+
     public static void main(String[] args) {
         System.out.println(intVar);
         System.out.println(doubleVar);
