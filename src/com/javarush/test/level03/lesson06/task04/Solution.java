@@ -8,8 +8,7 @@ public class Solution
 {
     public static void main(String[] args)
     {
-        String javaHome = System.getProperty("java.home");
-        System.out.println(javaHome + System.getProperty("file.separator") + "java.exe");
+        System.out.println("c:\\Program Files\\Java\\jdk1.8.0\\bin\\java.exe");
 
     }
 }
