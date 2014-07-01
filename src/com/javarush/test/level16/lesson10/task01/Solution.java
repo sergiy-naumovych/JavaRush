@@ -29,11 +29,14 @@ public class Solution {
         private int seconds;
 
         public void run() {
-            //try {
-                //add your code here - добавьте код тут
-            //} catch (InterruptedException e) {
+            try {
+                while(true) {
+                    Thread.sleep(1000);
+                    seconds++;
+                }
+            } catch (InterruptedException e) {
                 System.out.println(seconds);
-            //}
+            }
         }
     }
 }
