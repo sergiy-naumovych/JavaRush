@@ -10,7 +10,7 @@ public class Solution
     {
         int a = 50;
         int b = 17;
-        double d =  (float)(a / b);
+        double d =  (float)(a / (double)b);
         System.out.println(d);
     }
 }
