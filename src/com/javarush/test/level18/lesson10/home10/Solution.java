@@ -13,5 +13,6 @@ package com.javarush.test.level18.lesson10.home10;
 
 public class Solution {
     public static void main(String[] args) {
+        //
     }
 }
