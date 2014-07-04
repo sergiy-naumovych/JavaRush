@@ -19,7 +19,6 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String fileName;
         while(!(fileName = reader.readLine()).equals("exit")){
-            System.out.println(fileName);
             new ReadThread(fileName).start();
         }
 
