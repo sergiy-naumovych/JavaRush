@@ -1,6 +1,7 @@
 package com.javarush.test.level18.lesson10.home08;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,13 +18,14 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        ArrayList<String> names = new ArrayList<>();
         String fileName;
         while(!(fileName = reader.readLine()).equals("exit")){
-            new ReadThread(fileName).start();
+            names.add(fileName);
         }
 
-        for(Map.Entry<String, Integer> entry : resultMap.entrySet()){
-            System.out.println(entry.getKey() + " " + entry.getValue());
+        for(String s : names){
+            new ReadThread(s).start();
         }
 
         reader.close();
@@ -43,11 +45,13 @@ public class Solution {
             int max = Integer.MIN_VALUE;
             byte res = Byte.MIN_VALUE;
 
-            try(FileInputStream in = new FileInputStream(this.fileName)) {
+            try {
+                FileInputStream in = new FileInputStream(this.fileName);
                 while(in.available() > 0){
                     data = new byte[in.available()];
                     in.read(data);
                 }
+                in.close();
             } catch (IOException e) {
                 //NOP
             }
