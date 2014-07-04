@@ -10,7 +10,9 @@ public class Solution
 {
     public static void main(String[] args)
     {
-        //Напишите тут ваш код
+        System.out.println("красный" + " " + "оранжевый" + " " + "желтый" + " ");
+        System.out.println("зеленый" + " " + "голубой" + " " + "синий" + " ");
+        System.out.println("фиолетовый");
 
     }
 }
