@@ -10,7 +10,7 @@ public class Solution
     public static void main(String[] args) throws Exception
     {
 
-        System.out.println(new Dream().HOBBIE.toString());
+       // System.out.println(new Dream().HOBBIE.toString());
         System.out.println(new Hobbie().toString());
 
     }
@@ -19,14 +19,14 @@ public class Solution
         {
         }
 
-        static class Dream
+        interface Dream
         {
-            private static Hobbie HOBBIE = new Hobbie();
+            static Hobbie HOBBIE = new Hobbie();
         }
 
-        static class Hobbie extends Dream implements Desire
+        static class Hobbie implements Dream
         {
-            static int INDEX = 1;
+            int INDEX = 1;
 
             @Override
             public String toString()
