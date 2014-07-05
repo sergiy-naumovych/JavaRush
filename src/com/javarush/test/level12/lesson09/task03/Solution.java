@@ -27,19 +27,48 @@ public class Solution
         public void swim();
     }
 
-    public class Dog
+    public class Dog implements Run, Swim
     {
+        public void run(){
+
+        }
+        public void swim(){
+
+        }
     }
 
-    public class Fish
+    public class Fish implements Swim
     {
+        public void swim(){
+
+        }
     }
 
-    public class Bird
+    public class Bird implements Fly, Swim, Run
     {
+
+        public void fly(){
+
+        }
+
+        @Override
+        public void run() {
+
+        }
+
+        @Override
+        public void swim() {
+
+        }
     }
 
-    public class Airplane
+    public class Airplane implements Fly, Run
     {
+        public void fly(){
+
+        }
+        public void run(){
+
+        }
     }
 }
