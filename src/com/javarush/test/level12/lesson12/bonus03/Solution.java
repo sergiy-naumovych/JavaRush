@@ -23,9 +23,16 @@ public class Solution
             return new Pair<Integer, Integer>(null, null);
         }
 
-        //Напишите тут ваше решение
+        Pair<Integer, Integer> res = new Pair<>(array[0], 0);
 
-        return new Pair<Integer, Integer>(0, 0);
+        for(int i = 1; i < array.length; i++){
+            if(array[i] < res.x){
+                res.x = array[i];
+                res.y = i;
+            }
+        }
+
+        return res;
     }
 
 
